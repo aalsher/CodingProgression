@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Sushis</title>
+        <meta name="description" content="jQuery Assignment">
+        <link rel="stylesheet" href="Disappearingsushis.css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('img').click(function(){
+                    $(this).hide();
+                });
+                
+                $("#restore").click(function(){
+                     $("img").show();
+                });
+            });
+       
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <header>
+                <h1>jQuery Disappearing Sushis</h1>
+            </header>
+        </div>
+            <div id="main">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+            <img src="sushi.png" alt= "Sushi Logo">
+        </div>
+
+            <div id="restore">
+                <img src="restore.png" alt="restore button">
+            </div>  
+    </body>
+
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Users</title>
+    <meta name="description" content="jQuery Users Assignment">
+    <link rel="stylesheet" href="Users.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+
+    ///JQUERY HERE///
+    $(document).ready(function(){
+
+    	$('form').submit(function(){
+    	return false;
+    	});
+
+    	$('form').submit(function(){
+    	$('#Table tbody').append("<tr>"+
+    		"<td>" + $('#first_name').val() + "</td>"+
+    		"<td>" + $('#last_name').val() + "</td>"+
+    		"<td>" + $('#email').val() + "</td>"+
+    		"<td>" + $('#contact_no').val() + "</td></tr>");
+    	});
+
+    });
+    </script>
+
+</head>
+<body>
+	
+	<table id='Table'> <!-- THIS IS DYNAMICALLY RENDERED CONTENT -->
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Contact No.</th>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<h1> Add User </h1>
+
+	<form>
+		First Name<input id="first_name" type='text' name='first_name' placeholder='First name'>
+		Last name<input id="last_name" type='text' name='last_name' placeholder='Last name'>
+		Email<input id="email" type='text' name='email' placeholder='Email'>
+		Contact No.<input id="contact_no" type='text' name='contact_no' placeholder='Contact No.'>
+		<input type='submit' value='Add User'>
+	</form>
+</body>
+</html>

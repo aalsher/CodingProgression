@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 1px dotted red;
+}
+#wrapper{
+    margin: auto;
+    width: 1000px;
+}
+#main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+nav{
+    width: 200px;
+    /* height: 400px; */
+}
+article{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul li{
+    margin-left: 15px;
+}
+span{
+    width: 90px;
+}
+
+article div{
+    display:flex;
+    flex-direction: row;
+}
+

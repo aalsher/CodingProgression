@@ -1,0 +1,52 @@
+<!-- http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=93e32762414191f33150dd1d360f7859 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WeatherApp</title>
+        <meta name="description" content="AJAX Assignment">
+        <link rel="stylesheet" href="WeatherApp.css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+        <script type= 'text/javascript'>
+		        $(document).ready(function() {
+
+			        $('form').submit(function() {
+			    		var city= $('#searchweather').val();
+			        	$.get("http://api.openweathermap.org/data/2.5/weather?q=" +city+ ",&&appid=93e32762414191f33150dd1d360f7859",function(res){
+				            console.log(res);
+				            $('#city').text(res.name);
+				        	$('#temperature').append(Math.trunc(res.main.temp * (9/5) - 459.67));
+				        }, 'json');
+				        
+				        return false;
+	    			});
+
+	    		
+		        });	
+	
+		</script>
+	</head>
+
+	<body>
+
+	<h1>Assignment: Your Very Own Weather Forecast App!</h1>
+
+	<form id="search">
+		<input id="searchweather" type='text' name='search'>
+		<input type='submit' value='Search Weather'>
+	</form>
+
+	<div id="results">
+		<h1 id="city"></h1>
+		<p id="temperature"><strong>Temperature:</strong></p>
+	</div>
+
+	</body>
+
+</html>
+

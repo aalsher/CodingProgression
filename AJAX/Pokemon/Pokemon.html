@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Sushis</title>
+        <meta name="description" content="jQuery Assignment">
+        <link rel="stylesheet" href="Disappearingsushis.css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+        <script type= 'text/javascript'>
+
+            function GetPokemonImages(){
+                for(i =1; i < 152; i++){
+                    $('#main').append(`<img src="http://pokeapi.co/media/img/${i}.png">`)
+                }
+            }
+
+            $(document).ready(function(){
+
+                GetPokemonImages();
+                
+                $('img').click(function(){
+                    $(this).hide();
+                });
+                
+                $("#restore").click(function(){
+                     $("img").show();
+                });
+            });
+       
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <header>
+                <h1>Assignment: Pokemon</h1>
+            </header>
+        </div>
+            <div id="main">
+            
+        </div>
+
+    </body>
+
+</html>

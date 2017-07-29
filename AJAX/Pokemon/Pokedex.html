@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokedex</title>
+        <meta name="description" content="jQuery Assignment">
+        <link rel="stylesheet" href="Pokedex.css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+        <script type= 'text/javascript'>
+
+            function GetPokemonImages(){
+                for( i =1; i < 152; i++){
+                    $('#main').append(`<img id='${i}' src="http://pokeapi.co/media/img/${i}.png">`);
+                      
+                }
+            }
+
+            $(document).ready(function(){
+
+            GetPokemonImages();
+
+            $('img').on('click', function(){
+                var id= $(this).attr('id');
+                $.get("http://pokeapi.co/api/v1/pokemon/"+id+"/",function(pokemon){ 
+                    console.log(pokemon); 
+                    $('ul').html("");
+                    $ ('#pokemonname').html(pokemon.name);  
+                    $ ('#smallimage').prop("src", `http://pokeapi.co/media/img/${id}.png`); 
+                    for (var j=0; j < pokemon.types.length; j++){
+                        $ ('ul').append("<li>" + pokemon.types[j].name + "</li>");   
+                    }
+                    $ ('#height').html(pokemon.height); 
+                    $ ('#weight').html(pokemon.weight); 
+
+                }, "json"); 
+   
+            }) 
+
+            });
+       
+        </script>
+    </head>
+
+    <body>
+
+        <div id="header">
+            <header><h1>Assignment: Pokemon</h1></header>
+        </div>
+
+        <div id='wrapper'>
+
+            <div id="main"></div>
+
+            <div id="red_box">
+                
+                <strong><p id="pokemonname"></p></strong>
+                <img id="smallimage"></img>
+                <p><strong> Types: </strong></p>
+                    <ul></ul>
+                <p><strong> Height: </strong></p>
+                    <p id="height"></p>
+                <p><strong>Weight:<strong></p>
+                    <p id="weight"></p>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

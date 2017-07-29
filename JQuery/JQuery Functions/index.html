@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Functions</title>
+        <meta name="description" content="Internet Assignment">
+        <link rel="stylesheet" href="JQueryFunctions.css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('#hide').click(function(){
+                    $('article img').hide();//"slow");
+
+                });
+                $('#show').click(function(){
+                    $('article img').show();//"slow");
+
+                });
+                $('#toggle').click(function(){
+                    $('article img').toggle();//"slow");
+
+                });
+                $('#slideDown').click(function(){
+                    $('article img').slideDown("slow");
+                });
+                $('#slideUp').click(function(){
+                    $('article img').slideUp("slow");
+                });
+                $('#slideToggle').click(function(){
+                    $('article img').slideToggle("slow");
+                });
+                $('#fadeIn').click(function(){
+                    $('article img').fadeIn("slow");
+                });
+
+                $('#fadeOut').click(function(){
+                    $('article img').fadeOut("slow");
+                });
+
+                // slideUp
+
+
+
+
+            })
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>jQuery Practice</h1>
+                <button>.addClass</button>
+            </header>
+            <div id="main">
+                <nav>
+                    <ul>
+                        <!-- <li><strong>.click</strong></li> alert saying its used everywhere -->
+                        <li>
+                            Viewing an element
+                            <ul>
+                                <li id="hide"><strong>.hide</strong></li>
+                                <li id="show"><strong>.show</strong></li>
+                                <li id="toggle"><strong>.toggle</strong></li>
+                                <li id="slideDown"><strong>.slideDown</strong></li>
+                                <li id="slideUp"><strong>.slideUp</strong></li>
+                                <li id="slideToggle"><strong>.slideToggle</strong></li>
+                                <li id="fadeIn"><strong>.fadeIn</strong></li>
+                                <li id="fadeOut"><strong>.fadeOut</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>.addClass</strong></li> <!--see above button alert when clicking-->
+                        <li>
+                            Adds Something Somewhere
+                            <ul>
+                                <li><strong>.before</strong></li>
+                                <li><strong>.after</strong></li>
+                                <li><strong>.append</strong></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Edditing and Returning Content
+                            <ul>
+                                <li>
+                                    Editting content
+                                    <ul>
+                                        <li><strong>.html</strong></li>
+                                        <li><strong>.text</strong></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Returns Something depending on the funciton
+                                    <ul>
+                                        <li><strong>.attr</strong></li> <!--outputs the initial value of this attribute in first matched element-->
+                                        <li><strong>.val</strong></li> <!--Get the current value of the first element in the set of matched elements.-->
+                                    </ul>
+                                </li>
+                                <li><strong>.data</strong></li></ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <article>
+                    <img src="https://unsplash.it/400/200" alt="Random image didn't work" > <!--400?-->
+                    <p>You just did: <span></span></p>
+                    <p>
+                        <input id="check1" type="checkbox" checked="checked">
+                        <label for="check1">Check me</label>
+                    </p>
+                    <p></p>
+
+                    <!--jQuery attr example here-->
+
+                </article>
+            </div>
+        </div>
+    </body>
+</html>

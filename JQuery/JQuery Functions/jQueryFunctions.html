@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Functions</title>
+        <meta name="description" content="Internet Assignment">
+        <link rel="stylesheet" href="JQueryFunctions.css">
+
+        <style>
+        .red {
+            background: red;
+        }
+        </style>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('input').hide();
+                $('label').hide();
+
+                $('header button').click(function(){
+                    $('header').addClass("red");
+                });
+                
+                $('#hide').click(function(){
+                    $('article img').hide();
+                    $('article span').html(".hide");
+
+                });
+                $('#show').click(function(){
+                    $('article img').show();
+                    $('article span').html(".show");
+
+                });
+                $('#toggle').click(function(){
+                    $('article img').toggle();
+                    $('article span').html(".toggle");
+
+                });
+                $('#slideDown').click(function(){
+                    $('article img').slideDown();
+                    $('article span').html(".slideDown");
+                });
+                $('#slideUp').click(function(){
+                    $('article img').slideUp();
+                    $('article span').html(".slideUp");
+                });
+                $('#slideToggle').click(function(){
+                    $('article img').slideToggle();
+                    $('article span').html(".slideToggle");
+                });
+                $('#fadeIn').click(function(){
+                    $('article img').fadeIn();
+                    $('article span').html(".fadeIn");
+                });
+
+                $('#fadeOut').click(function(){
+                    $('article img').fadeOut();
+                    $('article span').html(".fadeOut");
+                });
+
+                 $('#before').click(function(){
+                    $('article img').before("I am before the image");
+                    $('article span').html(".before");
+                });
+                $('#after').click(function(){
+                    $('article img').after("I am after the image");
+                    $('article span').html(".after");
+                });
+
+                $('#append').click(function(){
+                    $('article span').html(".append<br>");
+                    $('article span').append("<br>I'm added here");  
+                });
+
+                $('#html').click(function(){
+                    var $input = $( this );
+                    $('article span').html(" " + $input.prop("id") + " <br> html can input html tag...like <b>boldtest</b>");
+                });
+
+                $('#text').click(function(){
+                    var $input = $( this );
+                    $('article span').text(" " + $input.prop("id") + " <br> But you can't put in html tags...like <b>boldtest</b>");
+                });
+
+                $('#attr').click(function(){
+                    $('input').show();
+                    $('label').show();
+                    var $input = $( this );
+                    $('article span').html($input.prop("id"));
+                });
+
+                
+                $('input')
+                    .change(function() {
+                      var $input = $( this );
+                      $( "p" ).last().html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+                          ".prop( 'checked' ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+                          ".is( ':checked' ): <b>" + $input.is( ":checked" ) + "</b>" );
+                      })
+            
+                $('#val').click(function(){
+                    $('article span').val(".append<br>");
+                    $('article span').html(".val");  
+                });
+
+                function displayVals() {
+                    var singleValues = $( "#single" ).val();
+                    var multipleValues = $( "#multiple" ).val() || [];
+                    $( "p" ).last().html( "<b>Single:</b> " + singleValues + " <b>Multiple:</b> " + multipleValues.join( ", ") );
+                }
+ 
+                $( "select" ).change( displayVals );
+                displayVals();
+
+                $('#data').click(function(){
+                    var $input = $( this );
+                    $('article span').html(" " + $input.prop("id") + "<br>");
+                    $('article').data('firstVar'," This is the first data value created");
+                    $('article p').last().html("First Data Variable:" + $('article').data('firstVar'));
+                    // $('article').data('meaningOfLife',42);
+                    // $('article').data('lastVar',"This entry will output when data() is called with no parameters");
+                    // /$('article p').last().html/alert(/"All Variable: <br>"/ + $('article').data());
+                });
+
+            })
+       
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>jQuery Practice</h1>
+                <button>.addClass</button>
+            </header>
+            <div id="main">
+                <nav>
+                    <ul>
+                       
+                        <li>
+                            Viewing an element
+                            <ul>
+                                <li id="hide"><strong>.hide</strong></li>
+                                <li id="show"><strong>.show</strong></li>
+                                <li id="toggle"><strong>.toggle</strong></li>
+                                <li id="slideDown"><strong>.slideDown</strong></li>
+                                <li id="slideUp"><strong>.slideUp</strong></li>
+                                <li id="slideToggle"><strong>.slideToggle</strong></li>
+                                <li id="fadeIn"><strong>.fadeIn</strong></li>
+                                <li id="fadeOut"><strong>.fadeOut</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>.addClass</strong></li> <!--see above button alert when clicking-->
+                        <li>
+                            Adds Something Somewhere
+                            <ul>
+                                <li id="before"><strong>.before</strong></li>
+                                <li id= "after"><strong>.after</strong></li>
+                                <li id="append"><strong>.append</strong></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Editing and Returning Content
+                            <ul>
+                                <li>
+                                    Editing Content
+                                    <ul>
+                                        <li id="html"><strong>.html</strong></li>
+                                        <li id="text"><strong>.text</strong></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Returns Something Depending on the Function
+                                    <ul>
+                                        <li id="attr"><strong>.attr</strong></li> <!--outputs the initial value of this attribute in first matched element-->
+                                        <li id="val"><strong>.val</strong></li> <!--Get the current value of the first element in the set of matched elements.-->
+                                    </ul>
+                                </li>
+                                <li id="data"><strong>.data</strong></li></ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <article>
+                    <img src="https://unsplash.it/400/200" alt="Random image didn't work" > <!--400?-->
+                    <p>You just did: <span></span></p>
+                   
+                    <input id="check1" type="checkbox" checked="checked">
+                    <label for="check1">Check me</label>
+                    <p></p>
+                    
+                  <div>
+                    <select id="single">
+                      <option>Single</option>
+                      <option>Single2</option>
+                    </select>
+ 
+                    <select id="multiple" multiple="multiple">
+                      <option selected="selected">Multiple</option>
+                      <option>Multiple2</option>
+                      <option selected="selected">Multiple3</option>
+                    </select>
+                  </div>
+
+                </article>
+            </div>
+        </div>
+    </body>
+</html>

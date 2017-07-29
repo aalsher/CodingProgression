@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Contacts Card</title>
+    <meta name="description" content="jQuery Contacts Card">
+    <link rel="stylesheet" href="ContactsCard.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+
+    ///JQUERY HERE///
+    
+    $(document).ready(function(){
+        $(document).on("click","button", function(){
+            console.log("Success");
+            $('body').append(
+                `<div class="card">
+                    <h1>${$('#first_name').val()} ${$('#last_name').val()}</h1>
+                    <p>Click for description<br>
+                    <span class="hidden">${$('#description').val()}</span></p>
+                </div>`);
+            $('.card span').hide();
+            $('.card p').click(function(){
+                $(this).children().show();
+            });
+            return false;
+        });
+    });          
+    </script>
+
+</head>
+<body>
+	<form>
+		First Name:<input id="first_name" type='text' name='first_name' placeholder='First name'>
+		Last Name:<input id="last_name" type='text' name='last_name' placeholder='Last name'>
+		Description:<input id="description" type='text' name='description' placeholder='Description'>
+		<button id="adduser" type='submit' value='Add User'>Add User</button>
+    </form>
+</body>
+</html>

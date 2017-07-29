@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 1px dotted red;
+    display: relative;
+}
+
+#images{
+    height: 450px;
+    width: 1000px;
+    margin: 0 auto;
+     display: flex;
+    flex-direction: column;
+}
+
+#images img{
+    height: 50px;
+    width: 300px;
+    margin: 0;
+}
+
+

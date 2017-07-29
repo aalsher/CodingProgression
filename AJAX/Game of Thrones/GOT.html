@@ -1,0 +1,68 @@
+<!-- https://anapioficeandfire.com/api/characters/583 -->
+<!-- 378 = Targaryen
+15 = Baratheon
+229= Lannister
+362= Stark
+ -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GOT</title>
+        <meta name="description" content="GOT Assignment">
+        <link rel="stylesheet" href="GOT.css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+        <script type= 'text/javascript'>
+		        $(document).ready(function(){
+
+			        $('img').on('click', function(){
+			        	var id=$(this).attr('id');
+			        	$.get("https://anapioficeandfire.com/api/houses/"+id+"/",function(houses){
+			        		console.log(houses);
+			        		$('#name').html(houses.name);
+			        		$('#words').html(houses.words);
+			        		$('#titles').html('');
+
+			        		for (var j=0; j < houses.titles.length-1; j++){
+	                        	$ ('#titles').append(houses.titles[j] + ","); 
+
+		        				}
+		        				$ ('#titles').append(houses.titles[houses.titles.length-1]);
+
+		        		});
+		        	});
+			    });
+	
+		</script>
+	</head>
+
+	<body>
+
+	<div id="wrapper">
+
+		<div id="HouseImages">
+			<img id="362" src= "stark.png" alt= "House of Stark">
+			<img id="378" src= "targaryen.png" alt= "House of Targaryen">
+			<img id="229" src= "lannister.png" alt= "House of Lannister">
+			<img id="15" src= "baratheon.png" alt= "House of Baratheon">
+		</div>
+
+		<div id="HouseDetails">
+			<h1>House Details</h1>
+			<strong>Name:</strong><p id="name"></p>
+			<strong>Words:</strong><p id="words"></p>
+			<strong>Titles:</strong><p id="titles"></p>
+		</div>
+
+	</div>
+
+	</body>
+
+</html>
+

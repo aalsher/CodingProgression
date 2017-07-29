@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px dotted red; */
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+form {
+
+	display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 50px;
+    width: 300px;
+    height: 350px;
+}
+
+form input{
+	border: 1px solid black;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#description {
+    height: 100px;
+    width: 200px;
+}
+
+#adduser {
+    margin: 20px;
+    height: 25px;
+}
+
+.card {
+    background-color: grey;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    text-align: center;
+}
+.card h1{
+    font-weight: bold;
+    font-size: 1.2em;  
+}
+
+
+

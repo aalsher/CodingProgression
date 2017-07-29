@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+
+}
+
+#wrapper{
+    height: 450px;
+    width: 1000px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+  	align-items: center;
+  }
+
+ #HouseImages {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#HouseImages img{
+    height: 170px;
+    width: 170px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
