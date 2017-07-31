@@ -1,0 +1,171 @@
+
+<html>
+    <title>Saturday Night Pacman Demo </title>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Saturday Night Pacman</title>
+        <meta name="description" content="My first Pacman">
+        <style type="text/css">
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+
+
+            body {
+                height: 300px;
+                width: 400px;
+                background-color: black;
+            }
+            div .row div {
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+            }
+
+            div.brick{
+                background-color: blue;
+            }
+
+            div.coin {
+                background: url('coin.gif');
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            div.empty{
+                background-color: black;
+            }
+            
+            div#mspacman{
+                background: url('mspacman.gif');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                -moz-transform: scaleX(-1);
+                -o-transform: scaleX(-1);
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+                filter: FlipH;
+                -ms-filter: "FlipH";
+            }
+
+            div#score{
+                border: 2px solid white;
+                width: 30px;
+                height: 30px;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="world"></div>
+            <div id="mspacman"></div>
+            <div id="score">0</div>
+        </div>
+
+    <script>
+  
+    // 1) display the world
+
+        var world = [
+            [2,2,2,2,2,2,2,2,2,2,2],
+            [2,0,1,1,2,2,2,2,2,1,2],
+            [2,1,1,1,1,1,1,1,1,1,2],
+            [2,2,2,2,2,1,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,1,2],
+            [2,1,2,1,1,1,1,2,1,1,2],
+            [2,1,1,1,2,2,2,2,2,1,2],
+            [2,1,1,1,1,1,1,1,1,1,2],
+            [2,2,2,2,2,1,1,1,1,1,2],
+            [2,2,2,2,2,2,2,2,2,2,2],
+        ];
+
+        var score = 0;
+        var mspacman = {
+            x: 1,
+            y: 1,
+        };
+        function displayWorld(){
+            var output='';
+            for(var i=0; i <world.length; i++){
+                output += "<div class='row'\n>";
+                for(var j=0; j<world[i].length; j++){
+                    if(world[i][j] == 2)
+                        output += "<div class='brick'></div>";
+                    else if(world[i][j] == 1)
+                        output += "<div class='coin'></div>";
+                    else if(world[i][j] == 0)
+                        output += "<div class='empty'></div>";
+                }
+                output += "\n</div>";
+            }
+            console.log(output);
+            document.getElementById('world').innerHTML = output;
+        }
+
+        // 2) move up and down
+
+        function displaymspacman(){
+            document.getElementById("mspacman").style.left = mspacman.x*30 +"px";
+            document.getElementById("mspacman").style.top = mspacman.y*30 +"px";
+            document.getElementById("mspacman").style.bottom = mspacman.y*30 +"px";
+            document.getElementById("mspacman").style.right = mspacman.x*30 +"px";
+        }
+
+        // 3) Update score
+
+        function displayscore(){
+            document.getElementById("score").innerHTML = score;
+        }
+    
+        displayWorld();
+        displaymspacman();
+        displayscore();
+
+        // 2) move up and down
+        document.onkeydown = function(e){
+            // DOWN
+            if (e.keyCode == 40 && world[mspacman.y+1][mspacman.x] != 2){
+                mspacman.y ++;
+            }
+            // UP
+            else if (e.keyCode == 38 && world[mspacman.y-1][mspacman.x] != 2){
+                mspacman.y --;
+            }
+            // LEFT
+            else if (e.keyCode == 37 && world[mspacman.y][mspacman.x-1] != 2){
+                mspacman.x --;
+            }
+            // RIGHT
+            else if (e.keyCode == 39 && world[mspacman.y][mspacman.x +1] != 2){
+                mspacman.x ++;
+            }
+
+            if(world[mspacman.y][mspacman.x]==1){
+                world[mspacman.y][mspacman.x] =0;
+                // 3) display score
+                score+=10;
+                displayWorld();
+                displayscore();
+                }
+
+            displaymspacman();
+        }
+    </script>
+    </body>
+
+</html>
+    
+
