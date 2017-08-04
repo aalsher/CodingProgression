@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='number_game.css') }}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Welcome to the Great Number Game</h1>
+      <h3>I am thinking of a number between 1 and 100</h3>
+      <h3>Take a guess!</h3>
+      <form method="post" action="/">
+        <input type="hidden" name="randomnum" value="randomnum">
+        <input type="text" name="guessed_num">
+        <input type="submit" value="Guess!">
+      </form>
+      <div id="feedback_box">
+          <p>{{feedback}}</p>
+      </div>
+      <a href= "/">Play Again</a>
+    </div>
+  </body>
+</html>
