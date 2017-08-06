@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#your_gold {
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+#your_gold p{
+    border: 1px solid black;
+    height: 20px;
+    width: 40px;
+}
+
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    width: 700px;
+    justify-content: space-between;
+}
+
+#forms {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 600px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#forms *{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.house {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+}
+.cave {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+}
+.casino {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+}
+.farm{
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+}
+
+#activities {
+    border: 1px solid black;
+    height: 200px;
+    width: 600px;
+    justify-content: center;
+    margin-left: 50px;
+    overflow: scroll;
+}
