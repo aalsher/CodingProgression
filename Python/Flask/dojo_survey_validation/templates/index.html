@@ -1,0 +1,40 @@
+<html>
+    <head>
+       <title>Dojo Survey</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+      <h1>Dojo Survey</h1>
+
+      <form action='/result' method='post'>
+            Name:<input type='text' name='name'>
+            Dojo Location:  <select name='location'>
+                <option value="Silicon Valley">Silicon Valley</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Washington DC">Washington DC</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Berkely">Berkely</option>
+                <option value="Orange County">Orange County</option>
+                </select>
+            Favorite Language:  <select name="language">
+                <option value="ios swift">ios swift</option>
+                <option value="Ruby on rails">ruby on rails</option>
+                <option value="Python">Python</option>
+                <option value="Mean">Mean</option>
+                <option value="C# ">C# DC</option>
+                </select>
+            <textarea name="textarea" value = "textbox" rows="4" cols="50" name="textarea" ></textarea>
+            <input type='submit' value='create user'>
+      </form>
+    </body>
+</html>
