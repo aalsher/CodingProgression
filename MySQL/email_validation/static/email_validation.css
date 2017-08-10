@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 200px;
+    width: 700px;
+    padding: 50px;
+    flex-direction: column;
+}
+
+#flash {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    background-color: red;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+}
+
