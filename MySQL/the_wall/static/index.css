@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#login {
+    flex-direction: column;
+    margin: 15px;
+}
+
+#login form{
+    flex-direction: column;
+}
+
+#registration_form *{
+    flex-direction: column;
+    margin: 15px;
+}
+
+#comment_form {
+    margin: 20px;
+}
