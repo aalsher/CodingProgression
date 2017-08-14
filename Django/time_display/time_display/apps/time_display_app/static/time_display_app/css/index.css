@@ -1,0 +1,36 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p {
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+#datetime {
+  margin: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date {
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+.time {
+  font-size: 1.5em;
+}
