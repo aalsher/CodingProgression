@@ -1,0 +1,32 @@
+*{
+  margin:0px;
+  padding: 0px;
+}
+
+body {
+  height: 300px;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#form * {
+  display: flex;
+  flex-direction: column;
+}
+
+#results *{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#results {
+  margin-left: 100px;
+}
+
+#form {
+  margin-right: 100px;
+}

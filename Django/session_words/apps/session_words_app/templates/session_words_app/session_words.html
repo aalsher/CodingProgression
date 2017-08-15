@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>Session Words</title>
+</head>
+<body>
+    <a href= "/clear">Clear Session</a>
+
+    <ul>
+      {% for new_word in request.session.messages %}
+          <li style="color: {{new_word.color}}; font-size: {{new_word.bigfont}}">{{new_word.word}}{{new_word.datetime}}</li>
+      {% endfor %}
+    </ul>
+
+</body>
+</html>

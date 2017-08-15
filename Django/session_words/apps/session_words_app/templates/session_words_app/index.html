@@ -1,0 +1,32 @@
+<html>
+    <head>
+       <title>Dojo Survey</title>
+       {% load static %}
+       <link rel="stylesheet" href="{% static 'session_words_app/css/index.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+      <div id= "form">
+          <form action='/add_word' name = "color_choice" method='post'>
+                {% csrf_token %}
+                Add a new word:
+                  <input type='text' name='add_word'>
+                Choose a Color
+                  <input type="radio" name="colorchoice" value="red">Red<br>
+                  <input type="radio" name="colorchoice" value="lightgreen">Green<br>
+                  <input type="radio" name="colorchoice" value="blue">Blue<br>
+                  <input type="checkbox" name="bigfont" checked>show in BIG fonts!<br>
+                <input type='submit' value='Add to Session'>
+          </form>
+      </div>
+
+      <div id="results">
+        <a href= "/clear">Clear Session</a><br>
+          <ul>
+            {% for new_word in request.session.messages %}
+                <li style="color: {{new_word.color}}; font-size: {{new_word.bigfont}}">{{new_word.word}}{{new_word.datetime}}</li>
+            {% endfor %}
+          </ul>
+      </div>
+
+    </body>
+</html>
