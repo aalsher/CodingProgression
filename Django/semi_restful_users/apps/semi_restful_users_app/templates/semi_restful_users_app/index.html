@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Users</title>
+
+</head>
+<body>
+
+<h1>Users</h1>
+
+
+  <table>
+    <tr>
+      <th>id</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.id}}</td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.created_at}}</td>
+        <td> <a href="/users/{{ user.id }}">Show</a><a href="/users/edit/{{ user.id }}">Edit</a><a href="/users/destroy/{{ user.id }}">Delete</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

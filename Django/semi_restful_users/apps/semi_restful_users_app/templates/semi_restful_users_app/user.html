@@ -1,0 +1,17 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User</title>
+
+</head>
+  <body>
+    <h2>User {{users.id}}:</h2>
+
+        <p>Full Name: {{users.first_name}}{{users.last_name}}</p>
+        <p>Email: {{users.email}}</p>
+        <p> Created at: {{users.created_at}}</p>
+
+      <a href = "/users/edit/{{users.id}}"> Edit </a>
+      <a href = "/users/destroy/{{users.id}}"> Delete </a>
+    </body>
+</html>
