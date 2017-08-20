@@ -64,7 +64,7 @@ class Books(models.Model):
     author = models.CharField(max_length=255, default='AUTHOR')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
-    uploader = models.ForeignKey(Users, related_name = "uploaded_books")
+    uploader = models.ManyToManyField(Users, related_name = "uploaded_books")
     def __repr__(self):
       return "<Books object: {} {}>".format(self.title, self.author)
 

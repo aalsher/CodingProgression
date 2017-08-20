@@ -47,22 +47,30 @@ def add_book_get(request):
 def add_book_post(request):
     print "got new book"
 
-    user = Users.objects.get(id = session['user_id'])
+    user = Users.objects.get(id = request.session['user_id'])
 
-    book = Books.objects.create(title = request.POST['title'], author = request.POST['author'], uploader = user)
+    print "got user"
 
-    review = Reviews.objects.create(review = request.POST['review'], rating = request.POST['rating'], )
-
+    book = Books.objects.create(title = request.POST['title'], author = request.POST['author'])
     print book
+
+    book.uploader_id = request.session['user_id']
+
+    review = Reviews.objects.create(review = request.POST['review'], rating = request.POST['rating'])
+
+    review.user_id = request.session['user_id']
+
+    # review.book_id = Books.objects.get(id)
+
     print review
     return redirect("/books/" + str(book.id))
 
 def view_book(reqeust, id):
-    if request.method == "GET":
-        context = {"book" : Books.objects.get(id = id),
-                   "review" : Reviews.objects.get(id=id),
-        }
-        print book
+
+    context = {"book" : Books.objects.get(id = id),
+               "review" : Reviews.objects.get(id=id),
+    }
+    print book
     return render(request,'users_app/view_book.html', context)
 
 def delete_book(request):
