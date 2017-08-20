@@ -1,0 +1,34 @@
+<html>
+    <head>
+       <title>View Book</title>
+    </head>
+    <body>
+      <div id="reviews">
+          <h1>{{books.title}}</h1>
+          <p>{{books.author}}</p>
+          <h1>Reviews</h1>
+            {% for book in books %}
+              <ul>
+                <li>{{book.rating}}</li>
+                <li>{{book.review}}</li>
+                <li>Posted on {{book.created_at}}</li>
+              </ul>
+            {% endfor %}
+          <a href="/books/delete{{review.id}}">Delete this Review</a>
+        </div>
+        <div id="add_review">
+          <h1>Add a Review</h1>
+          <form action='books/newreview' method='post'>
+              {% csrf_token %}
+              Add a Review:<input type='text' name='review'>
+              Rating:<select name="rating">
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3"> 3</option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
+                      stars. </select><br>
+              <input type='submit' value='Submit Review'>
+          </form>
+    </body>
+</html>

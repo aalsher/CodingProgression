@@ -1,0 +1,26 @@
+<html>
+    <head>
+       <title>Add Book and Review</title>
+    </head>
+    <body>
+
+        <div id="new_book_form">
+            <h1>Add a New Book title and a Review</h1>
+            <form action='/books/newbook/' method='post'>
+                {% csrf_token %}
+                Book Title:<input type='text' name='title'><br>
+                Author:<input type='text' name='author'><br>
+                Review:<input type='text' name='review'><br>
+                Rating:<select name="rating">
+                          <option value="1"> 1</option>
+                          <option value="2"> 2</option>
+                          <option value="3"> 3</option>
+                          <option value="4"> 4</option>
+                          <option value="5"> 5</option>
+                        stars. </select><br>
+                <input type='submit' value='Add Book and Review'>
+            </form>
+        </div>
+
+    </body>
+</html>
