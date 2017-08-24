@@ -1,0 +1,46 @@
+<html>
+    <head>
+       <title>Quotes</title>
+
+    </head>
+    <body>
+      {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+        {% endif %}
+
+      <h1>Welcome, {{user.name}}</h1>
+      <a href="/logout">Logout</a>
+      <!-- get only other quotes to show, not current user's -->
+      <div id= "all_quotes">
+        <h2>Quotable Quotes:</h2>
+            {% for quote in quotes %}
+              <p>{{quote.quoted_by}}:{{quote.message}}</p>
+              <p>Posted by: <a href="/users/{{quote.quote_uploader.id}}">{{quote.quote_uploader.name}}</a></p>
+              <button type="button"><a href="/quotes/favorite/{{quote.id}}">Add to Favorites</a></button>
+            {% endfor %}
+          </tr>
+      </div>
+      <div id= "quotes_list">
+        <h2>Your Favorites:</h2>
+            {% for userfavorite in userfavorites %}
+              <p>{{userfavorite.quoted_by}}:{{userfavorite.message}}</p>
+              <p>Posted by: <a href="users/{{userfavorite.quote_uploader.id}}">{{userfavorite.quote_uploader.name}}</a></p>
+              <button type="button"><a href="/quotes/favorite/delete/{{userfavorite.id}}">Remove from my List</a></button>
+            {% endfor %}
+        </div>
+
+        <div id="new_quote_form">
+            <h1>Contribute A Quote</h1>
+            <form action='/quotes/newquote/' method='post'>
+                {% csrf_token %}
+                Quoted By:<input type='text' name='quoted_by'><br>
+                Message:<input type='text' name='message'><br>
+                <input type='submit' value='Submit'>
+            </form>
+        </div>
+    </body>
+</html>

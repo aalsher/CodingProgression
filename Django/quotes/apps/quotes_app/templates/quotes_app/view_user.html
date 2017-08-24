@@ -1,0 +1,18 @@
+<html>
+    <head>
+       <title>View User</title>
+    </head>
+    <body>
+      <a href="/quotes">Dashboard</a>
+      <a href="/logout">Log Out</a>
+      <div id="user_details">
+          <h2>Posts by{{user.name}}</h2>
+          <h2> Count: {{count}}</h2>
+
+          {% for uploaded_quote in uploaded_quotes %}
+            <p><font color= "red">{{uploaded_quote.quoted_by}}</font></p>
+            <p>{{uploaded_quote.message}}</p>
+          {% endfor %}
+      </div>
+    </body>
+</html>

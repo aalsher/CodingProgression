@@ -1,0 +1,45 @@
+<html>
+    <head>
+       <title>Add A Trip</title>
+
+       <script language="javascript">
+          var today = new Date();
+          var dd = today.getDate();
+          var mm = today.getMonth()+1; //January is 0!
+          var yyyy = today.getFullYear();
+          if(dd<10){
+               dd='0'+dd
+           }
+           if(mm<10){
+               mm='0'+mm
+           }
+          today = yyyy+'-'+mm+'-'+dd;
+          document.getElementById("datefield").setAttribute("min", today);
+       </script>
+
+    </head>
+    <body>
+        {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div id="new_trip_form">
+            <h1>Add A Trip</h1>
+            <a href="/travels">Home</a>
+            <a href="/logout">Log Out</a>
+            <form action='/travels/newtrip/' method='post'>
+                {% csrf_token %}
+                Destination:<input type='text' name='destination'><br>
+                Description:<input type='text' name='description'><br>
+                Travel Date From (must be today or later):<input type='date' name='trip_date_from' value="{{m.trip_date_from|date:'Y-m-d'}}"><br>
+                Travel Date To (must be one day or more after "Travel Date From"):<input type='date' name='trip_date_to' value="{{m.trip_date_to|date:'Y-m-d'}}"><br>
+                <input type='submit' value='Add'>
+            </form>
+        </div>
+
+    </body>
+</html>
