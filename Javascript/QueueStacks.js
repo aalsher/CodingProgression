@@ -121,6 +121,30 @@ function SLQueueStack(){
     this.makeDequeuable();
     return second.pop();
   }
+  this.size = function(){
+    if(isPushable){
+      first.size();
+    }
+    else{
+      second.size();
+    }
+  }
+  this.contians = function(val){
+    if(isPushable){
+      first.contians(val);
+    }
+    else{
+      second.contians(val);
+    }
+  }
+  this.isEmpty = function(){
+    if(isPushable){
+      first.isEmpty();
+    }
+    else{
+      second.isEmpty();
+    }
+  }
 }
 
 var q1 = new SLQueueStack();
