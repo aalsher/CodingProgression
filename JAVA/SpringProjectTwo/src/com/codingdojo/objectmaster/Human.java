@@ -11,7 +11,7 @@ public class Human {
 		return otherhuman.health;
 	}
 	public Integer displayHealth() {
-		System.out.println(health);
+		System.out.println("Health total is:" + health);
 		return health;
 	}
 }
