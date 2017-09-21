@@ -9,9 +9,12 @@ function isLoop(SLL){
       return true;
     }
     else {
-      slow = slow.next;
-      speedy = speedy.next.next;
-    }
+      if(speedy.next){
+        speedy = speedy.next.next;
+        slow = slow.next;
+      } else{
+        return False;
+      }
   }
   return False;
 }
