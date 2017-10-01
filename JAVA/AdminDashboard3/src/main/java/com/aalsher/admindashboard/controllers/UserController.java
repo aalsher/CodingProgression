@@ -34,6 +34,11 @@ public class UserController {
 		this.userValidator = userValidator;
 	}
 	
+	 @RequestMapping("/")
+	    public String index() {
+	    		return "redirect:/login";
+	    }
+	
 	@RequestMapping(value={"/login","/register"})
 	public String login(Model model,@RequestParam(value="error",required=false) String error,@RequestParam(value="logout",required=false) String logout){
 		if(error != null){model.addAttribute("errorMessage","Invalid Credentials.");}
@@ -46,15 +51,14 @@ public class UserController {
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("user") User user,BindingResult res,Model model){
 		userValidator.validate(user,res);
-		if(res.hasErrors()){return "login_register";}
-		
-		if(roleService.findByName("ROLE_ADMIN").getUsers().size() < 1){ 
-			userService.create(new String[]{"ROLE_USER","ROLE_ADMIN"}, user);
+		if(userService.all().size() < 1){ 
+		    userService.create(new String[]{"ROLE_USER","ROLE_ADMIN"}, user);
 		}else{
-			userService.create(new String[]{"ROLE_USER"}, user);
+		    userService.create(new String[]{"ROLE_USER"}, user);
 		}
 		return "redirect:/login";
 	}
+
 	
 	@RequestMapping("/admin")
 	public String admin(Principal principal,Model model){		
@@ -79,13 +83,13 @@ public class UserController {
 		return "redirect:/admin";
 	}
 	
-	@RequestMapping(value={"/","/dashboard"})
+	@RequestMapping("/dashboard")
 	public String dashboard(Principal principal,Model model){
 		User user = userService.findByUsername(principal.getName());
+		System.out.println(user);
 		model.addAttribute("user",user);
 		user.setUpdatedAt(new Date());
 		userService.update(user);
-		
 		if(user.isAdmin()){
 			return "redirect:/admin";
 		}else{
