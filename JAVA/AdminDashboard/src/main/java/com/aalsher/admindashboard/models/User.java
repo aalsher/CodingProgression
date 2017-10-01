@@ -17,6 +17,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import com.aalsher.admindashboard.models.*;
 
 
 @Entity
@@ -149,9 +150,7 @@ public class User {
     protected void onUpdate(){
     this.setUpdatedAt(new Date());
     }
-    
 
-	
 }
 
 

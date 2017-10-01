@@ -1,5 +1,9 @@
 package com.aalsher.admindashboard.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Role;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +23,9 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
     
+	public List<User> all(){return (List<User>) userRepository.findAll();}
+	public User getById(long id){return userRepository.findOne(id);}
+
     
     // 1
     public void saveWithUserRole(User user) {
@@ -29,9 +36,11 @@ public class UserService {
      
      // 2 
     public void saveUserWithAdminRole(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(roleRepository.findByName("ROLE_ADMIN"));
-        userRepository.save(user);
+	    	List<Role> userRoles = new ArrayList<>();
+	    	Role getRole = roleRepository.findByName("ROLE_USER");
+	    	userRoles.add(getRole);
+	    	Role getRole = roleRepository.findByName("ROLE_ADMIN");
+	    	userRoles.add(getRole);
     }    
     
     // 3

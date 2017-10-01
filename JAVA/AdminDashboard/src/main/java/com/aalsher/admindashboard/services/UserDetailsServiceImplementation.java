@@ -3,8 +3,6 @@ package com.aalsher.admindashboard.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.relation.Role;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.aalsher.admindashboard.models.User;
+import com.aalsher.admindashboard.models.Role;
 import com.aalsher.admindashboard.repositories.UserRepository;
 
 @Service
@@ -46,4 +45,4 @@ public class UserDetailsServiceImplementation implements UserDetailsService {
         return authorities;
     }
 }
-}
+
