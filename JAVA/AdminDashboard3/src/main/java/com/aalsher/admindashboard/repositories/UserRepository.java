@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.aalsher.admindashboard.models.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
-    User findByUsername(String username);
+public interface UserRepository extends CrudRepository<User,Long>{
+	public User findByUsername(String username);
 }
