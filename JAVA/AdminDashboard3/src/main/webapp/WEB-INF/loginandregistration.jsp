@@ -47,13 +47,13 @@
 	            </p>
        			
        			<p>
-	            <form:label path="firstname">First Name:</form:label>
-	            <form:input path="firstname"/>
+	            <form:label path="firstName">First Name:</form:label>
+	            <form:input path="firstName"/>
        			</p>
        			
        			<p>
-	            <form:label path="lastname">Last Name:</form:label>
-	            <form:input path="lastname"/>
+	            <form:label path="lastName">Last Name:</form:label>
+	            <form:input path="lastName"/>
        			</p>
        			
        			<p>
@@ -62,8 +62,8 @@
         			</p>
     				
     				<p>
-         		<form:label path="passwordConfirmation">Password Confirmation:</form:label>
-         		<form:password path="passwordConfirmation"/>
+         		<form:label path="confirm">Password Confirmation:</form:label>
+         		<form:password path="confirm"/>
          		</p>
 
         			<input type="submit" value="Register!"/>
