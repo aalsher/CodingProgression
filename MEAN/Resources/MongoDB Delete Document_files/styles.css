@@ -1,0 +1,80 @@
+#frame1,
+#frame2,
+#frame3,
+#frame4,
+#frame4a,
+#frame4b,
+#frame5,
+#endFrame {
+    line-height: 1.1;
+    z-index: 201
+}
+
+#bkgColor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 190;
+    opacity: 0;
+}
+
+.backColor {
+    box-shadow: 10px 0 0 #0033a0, -10px 0 0 #0033a0;
+    line-height: 1.2!important;
+    padding-bottom: 5px;
+    position: relative;
+    display: inline;
+}
+#bgImg1 {
+    position: absolute;
+    top: 0;
+}
+#bgImg2, #bgImg3 {
+    position: absolute;
+    top: 0;
+    opacity: 0
+}
+#frame1,
+#frame2 {
+    font-size: 22px;
+    line-height: 1;
+    top: 150px;
+    left: 15px;
+    text-align: left;
+}
+#frame3 {
+    font-size: 32px;
+    line-height: 1;
+    top: 30px;
+    left: 15px;
+    text-align: left;
+}
+#endFrame {
+    font-size: 34px;
+    line-height: 1;
+    top: 50px;
+    left: 15px;
+    text-align: left;
+    opacity: 0
+}
+.backColor {
+    box-shadow: 10px 0 0 #0033a0, -10px 0 0 #0033a0;
+    line-height: 1.2!important;
+    padding-bottom: 5px;
+    position: relative;
+    display: inline;
+}
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.1em;
+}
+sub {
+    top: 0.4em;
+}
+
+.only {
+    line-height:1.1;
+    display:block;
+    margin-top:5px;
+}

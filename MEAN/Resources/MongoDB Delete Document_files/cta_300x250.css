@@ -1,0 +1,41 @@
+#Allstate{
+    position: absolute;
+    width: 122px;
+    height: 38px;
+    bottom: 0;
+    right: 0;
+    background-image: url(Allstate_slant.svg);
+    background-repeat: no-repeat;
+    z-index: 300;
+}
+
+
+/*CTA*/
+#btn_cta {
+    position: absolute;
+    bottom: -5px;
+    z-index: 350;
+    right: -200px;
+    width: 132px;
+}
+
+#ctaCopy {
+    z-index: 350;
+    font-size: 14px;
+    font-family: 'Objektiv Mk2';
+    font-weight: 700;
+    -webkit-transform: skew(145deg);
+    -moz-transform: skew(145deg);
+    -o-transform: skew(145deg);
+    transform: skew(145deg);
+    text-align: center;
+    padding-right: 10px;
+}
+
+p.quote {
+    padding: 8px;
+    -webkit-transform: skew(-145deg) !important;
+    -moz-transform: skew(-145deg) !important;
+    -o-transform: skew(-145deg) !important;
+    transform: skew(-145deg) !important;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0181)https://s0.2mdn.net/3950987/1506556654749/CS~300x250_AI~YVEF7147100_CM~100_CV~MoversFiberGigSA_MG~PR1_OT~7999mo_TA~GF_IM~NA_LG~EN_CU~A_OB~ACQ_FF~V1_SI~/300x250_Movers_Fiber_Gig.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!-- Ad Banner information -->
+        <meta name="ad.size" content="width=300,height=250">
+        <meta name="viewport" content="width=300, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <!-- ********************** DoubleClick Enabler ********************** -->
+        <!-- https://support.google.com/richmedia/answer/2672545 -->
+        <!-- <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script> -->
+        <!-- ***************************************************************** -->
+            <link rel="stylesheet" href="./main(1).css">
+            <script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+        <body>
+            <script type="text/javascript">
+                // ************** clickTag (ignored with DoubleClick) ************** //
+                var clickTag = "";
+            </script>
+            <div id="ad__wrapper">
+                <div id="ad__content" style="display: block;">
+                    <!-- Your banner ad content goes here -->
+                    <div id="conteinerBG">
+                        <div id="bgImage" style="opacity: 0;"></div>
+                        <div id="bg_black" style="top: 0px;"></div>
+                    </div>
+                    <div id="logo" class="sprite logo"></div>
+                    <div id="ctaBox" style="opacity: 1;">
+                        <div id="cta" class="sprite cta"></div>
+                        <div id="cta_arrow" class="sprite cta_arrow" style="left: 68px; opacity: 1;"></div>
+                    </div>
+<!--
+                    <div class="legal">
+                      <div id="close_btn" class="sprite close_btn"></div>
+                      <div id="offer_txt" class="sprite offer_txt"></div>
+                    </div>
+-->
+                    <div id="frame_f4" style="display: block; opacity: 1;">
+                        <div id="f4_obj1" class="sprite f4_txt1" style="opacity: 1; left: 20px;"></div>
+                        <div id="f4_obj2" class="sprite f4_txt2" style="opacity: 1;"></div>
+<!--                        <div id="Disclaimer" class="sprite Disclaimer"></div>-->
+                    </div>
+                    <div id="frame_f3" style="display: block; opacity: 1;">
+                        <div id="f3_obj1" class="sprite f3_txt1" style="opacity: 0; left: 19px;"></div>
+                    </div>
+                    <div id="frame_f2" style="display: block; opacity: 1;">
+                        <div id="f2_obj1" class="sprite f2_txt1" style="opacity: 0; left: 19px;"></div>
+                    </div>                    
+                    <div id="frame_f1" style="display: block; opacity: 1;">
+                        <div id="f1_obj1" class="sprite f1_txt1" style="opacity: 0; left: 20px;"></div>
+                    </div>
+            		<div id="hotSpot"></div>
+            	</div>
+            </div>
+            <script src="./TweenLite.min.js"></script>
+            <script src="./EasePack.min.js"></script>
+            <script src="./CSSPlugin.min.js"></script>
+            <script src="./main(2).js" type="text/javascript"></script>
+        
+        
+</body></html>

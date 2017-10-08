@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://s0.2mdn.net/6166698/1501877090945/300x250/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Allstate</title>
+    <meta name="ad.size" content="width=300,height=250">
+    <!-- oc: This Ad is Powered by Google Fonts -->
+    <link href="./css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css(1)" media="all">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./2016-toolkit.min.css">
+    <link rel="stylesheet" href="./2016-legal-panel.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./cta_300x250.css">
+    <script type="text/javascript">
+    var clickTag = "http://www.allstate.com";
+    </script>
+    <style type="text/css">
+    #atAd300x250 {
+        visibility: hidden;
+    }
+    </style>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+    <div id="atAd300x250" class="bgBlue" style="visibility: visible;">
+        <!-- START LEGAL -->
+        <div id="aAd_header">
+            <div id="aAd_legalCTA" class="aAd-txt--white aAd-txt--xxsmall aAd-txt--upper">LEGAL</div>
+            <div id="aAd_legalPanel" style="top: -58px;">
+                <div id="aAd_legalTxt" class="aAd-txt--white aAd-txt--xsmall">
+                    NOT AVAILABLE IN EVERY STATE. Feature optional. Subject to terms &amp; conditions. Allstate Fire and Casualty Insurance Co. and its affiliates: Northbrook, IL © 2017 Allstate Ins. Co.
+                </div>
+                <div id="aAd_legalCloseBtnTxt" class="aAd-txt--white aAd-txt--xsmall aAd-txt--upper">CLOSE</div>
+                <button id="aAd_LegalCloseCTA"></button>
+            </div>
+        </div>
+        <!-- END LEGAL -->
+        <!-- START LOGO -->
+        <div id="Allstate" style="bottom: 40px;">&nbsp;</div>
+        <!-- END LOGO -->
+        <a href="javascript:window.open(window.clickTag)" id="clickArea">&nbsp;</a>
+        <div id="border300x250">&nbsp;</div>
+        <div id="bkgColor" class="size300x250 bgBlue" style="visibility: inherit; opacity: 1;">&nbsp;</div>
+        <div id="bgImg1"><img src="./bg_image.jpg"></div>
+        <!-- START: Variation-specific frames -->
+        <div id="frame1" class="txtWhite " style="visibility: hidden; opacity: 0;">Are you a safe driver?</div>
+        <div id="frame2" class="txtWhite" style="visibility: hidden; opacity: 0;">Get rewarded with two Safe Driving Bonus<sup>®</sup>  Checks a Year.</div>
+        <div id="endFrame" class="txtLtBlue" style="visibility: inherit; opacity: 1;"><span class="txtLtBlue">Get 2 Safe<br>Driving Bonus<sup>®</sup><br>Checks a Year</span></div>
+
+        <!-- START CTA BUTTON -->
+        <div id="btn_cta" style="visibility: inherit; opacity: 1; right: -17px;">
+            <a href="javascript:window.open(window.clickTag)">
+                <div id="ctaCopy" class="bgOrange txtBlue">
+                    <p class="quote">Learn more</p>
+                </div>
+            </a>
+        </div>
+        <!-- END CTA BUTTON -->
+    </div>
+    <script src="./tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js"></script>
+    <script src="./jquery.min.js"></script>
+    <script src="./2016-legal-panel.min.js"></script>
+    <script src="./banner.js"></script>
+
+
+
+</body></html>
