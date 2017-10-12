@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Welcome </h1>
+
+    <form action='/tasks' method='post'>
+      Title:<input type='text' name='title' />
+      Description:<input type='text' name='description' />
+      Completed:
+      <select name="completed" form="completed">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+      </select>
+      <input type='submit' value='Add New Task' />
+    </form>
+
+  </body>
+</html>

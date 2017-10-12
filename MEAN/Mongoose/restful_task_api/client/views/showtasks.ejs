@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show</title>
+</head>
+<body>
+  <p>Title: <%= task.title %></p>
+  <p>Description: <%= task.description %></p>
+  <p>Completed: <%= task.completed %></p>
+  <a href="/">Home</a>
+  <a href="/edit/<%= task._id %>">Edit</a>
+</body>
+</html>

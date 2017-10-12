@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit</title>
+</head>
+<body>
+  <h1>Edit <%= task.name %>!</h1>
+  <form <form action="/task/<%= task.id %>" method='post'>
+    Title: <input type="text" name="title" value="<%= task.title %>">
+    Description: <input type="text" name="description" value="<%= task.color %>">
+    Completed:
+      <select name="completed" form="completed">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+      </select>
+    <input type="submit" value="Edit horse">
+  </form>
+  <a href="/">Home</a>
+</body>
+</html>
