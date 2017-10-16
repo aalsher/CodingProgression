@@ -41,7 +41,9 @@ module.exports = {
             if(!bcrypt.compareSync(req.body.login_password,user.password)){
                 res.render("index",{loginErrors:["Invalid Credentials."]});
             }else{
+                console.log("got to dashboard");
                 req.session.user_id = user._id;
+                console.log(user._id);
                 res.redirect("/dashboard");
             };
         }else{
@@ -52,8 +54,9 @@ module.exports = {
   },
 
   dashboard: function(req,res){
-      user = User.find({ _id: req.session.user_id })
+    User.findOne({ _id: req.session.user_id }, function(err,user){
       res.render('dashboard', { user: user});
+    })
   }
 
 }

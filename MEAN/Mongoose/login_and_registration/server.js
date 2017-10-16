@@ -5,12 +5,11 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-
+app.use(session({secret:"hideme"}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname,'client', 'views'));
 app.set('view engine', 'ejs');
-app.use(session({secret:"hideme"}));
 
 require('./server/config/mongoose.js');
 
