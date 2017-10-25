@@ -1,0 +1,11 @@
+<h1>US Time Zone Display</h1>
+
+<button (click)='setPst()' [ngClass]="{ 'yellow': clicked == 'PST' }">PST</button>
+<button (click)='setMst()' [ngClass]="{ 'yellow': clicked == 'MST' }">MST</button>
+<button (click)='setCst()' [ngClass]="{ 'yellow': clicked == 'CST' }">CST</button>
+<button (click)='setEst()' [ngClass]="{ 'yellow': clicked == 'EST' }">EST</button>
+<button (click)='clear()'>Clear</button>
+
+<div>
+  {{time | date:'medium'}}
+</div>
