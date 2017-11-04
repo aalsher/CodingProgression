@@ -1,0 +1,16 @@
+<h1>SwitchBoard</h1>
+
+<div class="button" *ngFor="let button of buttons; let idx = index">
+  <button
+  *ngIf="button"
+  [ngClass]="{'on': button}"
+  (click)="click(idx)">
+  ON
+  </button>
+  
+  <button
+  *ngIf="!button"
+  [ngClass]="{'on': button}"
+  (click)="click(idx)">
+  OFF</button>
+</div>
